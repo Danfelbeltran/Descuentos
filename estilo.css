@@ -1,0 +1,24 @@
+* {font-family: 'Dancing Script', cursive;
+font-family: 'Overpass', sans-serif;
+font-family: 'Rajdhani', sans-serif;}
+
+
+
+h1{color: #0B7704;}
+h2{color: #0B7704; font-size: 35px}
+
+.inputvalor{height: 25px;
+	width: 70px}
+.casvalue{height: 25px;
+	width: 40px;}
+.casdescuento{height: 25px;
+	width: 40px;
+	cursor: text;}
+.button {background: #FF2929;
+	width: 230px;
+	height: 45px }
+.paga{font-size: 30px; background: #FFCAA6}
+.ahorro{font-size: 20px}
+
+.descuentazos{bottom: 20px; object-fit: cover;
+position: absolute;}
