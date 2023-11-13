@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Descuento</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="img/ico%.png">
+    <link rel="icon" href="imag/logo.ICO">
+    <meta name="keywords" content="Descuentos, tiendas, compras, online, cupones">
+    <meta name="description" content="Descuentos">
+    <meta name="autor" content="Daniel Beltran">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Overpass:wght@300&family=Rajdhani&display=swap" rel="stylesheet">
+</head>
+<body>
+    <center>
+    <h1>% Descuentos %</h1>
+    
+    <form>
+        <b>
+        <label for="valor">Valor del Producto:</label>
+        <input class="inputvalor" type="number" id="valor" required><br><br>
+        <label for="descuento">Porcentaje de Descuento:</label>
+        <input class="casdescuento" type="number" id="descuentoValor" required>
+        <input class="casvalue" type="text" id="descuento" value="%" disabled><br>
+        <br>
+        <button  class="button" type="button" onclick="calcularDescuento()">Calcular Descuento</button>
+        </b>
+    </form>
+
+    <br>
+    <h2>Resultado:</h2>
+    <b>
+    <p class="paga">Paga solo: <span id="valorFinal"></span></p><br>
+
+    <p class="ahorro">Te ahorraste: <span id="ahorro"></span></p>
+    </b>
+    <script>
+        function calcularDescuento() {
+            var valorProducto = parseFloat(document.getElementById("valor").value);
+            var porcentajeDescuento = parseFloat(document.getElementById("descuentoValor").value);
+
+            if (!isNaN(valorProducto) && !isNaN(porcentajeDescuento)) {
+                var descuento = (valorProducto * porcentajeDescuento) / 100;
+                var valorFinal = valorProducto - descuento;
+
+                document.getElementById("valorFinal").textContent = valorFinal.toFixed(2);
+                document.getElementById("ahorro").textContent = descuento.toFixed(2);
+            } else {
+                alert("Ingresa valores válidos para calcular el descuento.");
+            }
+        }
+    </script>
+    </center>
+
+    <footer>
+    <a href="https://listado.mercadolibre.com.co/_Deal_promociones-colombia_Discount_5-100#DEAL_ID=MCO2298&S=landingHubpromociones-colombia&V=0&T=Header-normal&L=HEADER&deal_print_id=e0533a40-72b2-11ee-ac4c-9b1de810b0a2&c_id=header-normal&c_element_order=1&c_campaign=HEADER&c_uid=e0533a40-72b2-11ee-ac4c-9b1de810b0a2" target="_blank"><img class="descuentazos" src="img/descuentazos.JPG" alt="descuentazos" title="descuentazos"></a>
+    </footer>
+</body>
+</html>
