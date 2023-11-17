@@ -4,7 +4,6 @@
     <title>Mi Descuento</title>
     <meta charset="utf-8">
     <link rel="icon" href="img/ico%.png">
-    <link rel="icon" href="imag/logo.ICO">
     <meta name="keywords" content="Descuentos, tiendas, compras, online, cupones">
     <meta name="description" content="Descuentos">
     <meta name="autor" content="Daniel Beltran">
@@ -17,7 +16,7 @@
 </head>
 <body>
     <center>
-    <h1>% Descuentos %</h1>
+    <h1><img src="img/ico%.png">  Descuentos <img src="img/ico%.png"></h1>
     
     <form>
         <b>
@@ -25,13 +24,13 @@
         <input class="inputvalor" type="number" id="valor" required><br><br>
         <label for="descuento">Porcentaje de Descuento:</label>
         <input class="casdescuento" type="number" id="descuentoValor" required>
-        <input class="casvalue" type="text" id="descuento" value="%" disabled><br>
+        <input class="casvalue" type="text" id="descuento" value=" %" disabled><br>
         <br>
         <button  class="button" type="button" onclick="calcularDescuento()">Calcular Descuento</button>
         </b>
     </form>
 
-    <br>
+    <br><br>
     <h2>Resultado:</h2>
     <b>
     <p class="paga">Paga solo: <span id="valorFinal"></span></p><br>
@@ -47,17 +46,20 @@
                 var descuento = (valorProducto * porcentajeDescuento) / 100;
                 var valorFinal = valorProducto - descuento;
 
-                document.getElementById("valorFinal").textContent = valorFinal.toFixed(2);
-                document.getElementById("ahorro").textContent = descuento.toFixed(2);
+                document.getElementById("valorFinal").textContent = valorFinal.toFixed(0);
+                document.getElementById("ahorro").textContent = descuento.toFixed(0);
             } else {
                 alert("Ingresa valores válidos para calcular el descuento.");
             }
         }
+
     </script>
+
+        <br><br><br><H4><a href="Mi_descuento.html"><img src="img/refresh.jpg"></a></H4>
     </center>
 
     <footer>
-    <a href="https://listado.mercadolibre.com.co/_Deal_promociones-colombia_Discount_5-100#DEAL_ID=MCO2298&S=landingHubpromociones-colombia&V=0&T=Header-normal&L=HEADER&deal_print_id=e0533a40-72b2-11ee-ac4c-9b1de810b0a2&c_id=header-normal&c_element_order=1&c_campaign=HEADER&c_uid=e0533a40-72b2-11ee-ac4c-9b1de810b0a2" target="_blank"><img class="descuentazos" src="img/descuentazos.JPG" alt="descuentazos" title="descuentazos"></a>
+    <a href="https://best.aliexpress.com/?gatewayAdapt=glo2esp&browser_redirect=true" target="_blank"><img class="descuentazos" src="img/descuentazos.JPG" alt="descuentazos" title="descuentazos"></a>
     </footer>
 </body>
 </html>
