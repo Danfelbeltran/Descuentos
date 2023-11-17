@@ -1,24 +1,46 @@
 * {font-family: 'Dancing Script', cursive;
 font-family: 'Overpass', sans-serif;
-font-family: 'Rajdhani', sans-serif;}
+font-family: 'Rajdhani', sans-serif;
+background: #E9F7EF}
 
 
 
-h1{color: #0B7704;}
+h1{color: #0B7704; font-size: 40px;}
+h1 img{width: 50px;}
 h2{color: #0B7704; font-size: 35px}
 
-.inputvalor{height: 25px;
-	width: 70px}
-.casvalue{height: 25px;
-	width: 40px;}
-.casdescuento{height: 25px;
-	width: 40px;
-	cursor: text;}
-.button {background: #FF2929;
-	width: 230px;
-	height: 45px }
-.paga{font-size: 30px; background: #FFCAA6}
-.ahorro{font-size: 20px}
+label{font-size: 30px;}
+
+.inputvalor{height: 50px;
+	width: 120px;
+	font-size: 30px}
+
+.inputvalor:hover{background: white}
+
+.casvalue{height: 35px;
+	width: 45px;}
+
+.casdescuento{height: 50px;
+	width: 60px;
+	cursor: text;
+	font-size: 30px}
+
+.button {background: #F1948A;
+	width: 250px;
+	height: 65px;
+	font-size: 30px }
+
+.paga{font-size: 40px; background: #E74C3C;
+}
+.ahorro{font-size: 30px}
 
 .descuentazos{bottom: 20px; object-fit: cover;
 position: absolute;}
+
+
+h4 img{
+	width: 50px;
+}
+
+h4 img:hover {width: 60px;
+transition: width 1s}
