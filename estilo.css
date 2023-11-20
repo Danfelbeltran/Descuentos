@@ -1,7 +1,7 @@
 * {font-family: 'Dancing Script', cursive;
 font-family: 'Overpass', sans-serif;
 font-family: 'Rajdhani', sans-serif;
-background: #E9F7EF}
+background: #AED6F1}
 
 
 
@@ -25,7 +25,7 @@ label{font-size: 30px;}
 	cursor: text;
 	font-size: 30px}
 
-	.casdescuento:hover{background: white}
+.casdescuento:hover{background: white}
 
 .button {background: #F1948A;
 	width: 250px;
@@ -34,6 +34,7 @@ label{font-size: 30px;}
 
 .paga{font-size: 40px; background: #E74C3C;
 }
+
 .ahorro{font-size: 30px}
 
 
