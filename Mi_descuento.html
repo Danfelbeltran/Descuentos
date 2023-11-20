@@ -16,50 +16,58 @@
 </head>
 <body>
     <center>
-    <h1><img src="img/icono.png">  Descuentos <img src="img/icono.png"></h1>
-    
-    <form>
-        <b>
-        <label for="valor">Valor del Producto:</label>
-        <input class="inputvalor" type="number" id="valor" required><br><br>
-        <label for="descuento">% de Descuento:</label>
-        <input class="casdescuento" type="number" id="descuentoValor" required>
-        <input class="casvalue" type="text" id="descuento" value=" %" disabled><br>
-        <br>
-        <button  class="button" type="button" onclick="calcularDescuento()">Calcular Descuento</button>
-        </b>
-    </form>
+        <h1><img src="img/icono.png">  Descuentos <img src="img/icono.png"></h1>
+        
+        <form>
+            <b>
+                <label for="valor">Valor del Producto:</label>
+                <input class="inputvalor" type="text" id="valor" oninput="formatoMilesInput(this)" required><br><br>
 
-    <br>
-    <h2>Resultado:</h2>
-    <b>
-    <p class="paga">Paga solo: <span id="valorFinal"></span></p><br>
+                <label for="descuento"> % de Descuento:</label>
+                <input class="casdescuento" type="number" id="descuentoValor" required>
+                <input class="casvalue" type="text" id="descuento" value=" %" disabled><br><br>
 
-    <p class="ahorro">Te ahorraste: <span id="ahorro"></span></p>
-    </b>
-    <script>
-        function calcularDescuento() {
-            var valorProducto = parseFloat(document.getElementById("valor").value);
-            var porcentajeDescuento = parseFloat(document.getElementById("descuentoValor").value);
+                <button class="button" type="button" onclick="calcularDescuento()">Calcular Descuento</button>
+            </b>
+        </form>
 
-            if (!isNaN(valorProducto) && !isNaN(porcentajeDescuento)) {
-                var descuento = (valorProducto * porcentajeDescuento) / 100;
-                var valorFinal = valorProducto - descuento;
-
-                document.getElementById("valorFinal").textContent = valorFinal.toFixed(0);
-                document.getElementById("ahorro").textContent = descuento.toFixed(0);
-            } else {
-                alert("Ingresa valores válidos para calcular el descuento.");
+        <script>
+            function formatoMilesInput(input) {
+                let num = input.value.replace(/\D/g, '');
+                num = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                input.value = num;
             }
-        }
 
-    </script>
+            function calcularDescuento() {
+                var valorProducto = parseInt(document.getElementById("valor").value.replace(/\D/g, ''), 10);
+                var porcentajeDescuento = parseFloat(document.getElementById("descuentoValor").value);
 
+                if (!isNaN(valorProducto) && !isNaN(porcentajeDescuento)) {
+                    var descuento = (valorProducto * porcentajeDescuento) / 100;
+                    var valorFinal = valorProducto - descuento;
+
+                    document.getElementById("valorFinal").textContent = formatoMiles(valorFinal.toFixed(0));
+                    document.getElementById("ahorro").textContent = formatoMiles(descuento.toFixed(0));
+                } else {
+                    alert("Ingresa valores válidos para calcular el descuento.");
+                }
+            }
+
+            function formatoMiles(num) {
+                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            }
+        </script>
+
+        <br><br>
+        <h2>Resultado:</h2>
+        <b>
+            <p class="paga">Paga solo: <span id="valorFinal"></span></p><br>
+            <p class="ahorro">Te ahorraste: <span id="ahorro"></span></p>
+        </b>
         <br><br><br><H4><a href="Mi_descuento.html"><img src="img/refresh.jpg"></a></H4>
     </center>
 
     <footer>
-
     </footer>
 </body>
 </html>
